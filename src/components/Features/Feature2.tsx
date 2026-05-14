@@ -58,7 +58,7 @@ const Feature2 = () => {
           <div className={styles.gridWrapper}>
             <div className={styles.grid} ref={scrollRef}>
               {currentData.map((item, index) => (
-                <li key={index} className={styles.card}>
+                <div key={index} className={styles.card}>
                   <div className={styles.checkIconWrapper}>
                     <CheckCircle size={18} className={styles.checkIcon} />
                   </div>
@@ -66,7 +66,7 @@ const Feature2 = () => {
                     <img src={item.image} alt="Accreditation" />
                   </div>
                   <div className={styles.label}>{item.title}</div>
-                </li>
+                </div>
               ))}
             </div>
             <div className={styles.sliderControls}>

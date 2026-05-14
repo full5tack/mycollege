@@ -95,10 +95,6 @@ const ExpertGuidance = () => {
               <div key={index} className={styles.uniCard}>
                 <div className={styles.uniLogo}>
                   <img src="/manipallogo.png" alt="University" />
-                  <div className={styles.uniName}>
-                    <span>Manipal Online</span>
-                    <strong>University</strong>
-                  </div>
                 </div>
                 <div className={styles.uniInfo}>
                   <p>Manipal Online University</p>
