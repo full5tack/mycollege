@@ -19,17 +19,36 @@
     @media (max-width: 1024px) {
       grid-template-columns: 1fr;
       gap: 30px;
-      text-align: center;
+      text-align: left;
+      justify-items: start;
+      align-items: start;
+      width: 100%;
     }
   }
 
   .header {
+    @media (max-width: 1024px) {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
     h2 {
       font-size: 2.4rem;
       font-weight: 800;
       color: #222;
       line-height: 1.2;
       margin-bottom: 24px;
+      text-align: left;
+
+      @media (max-width: 1024px) {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 24px;
+      }
 
       @media (max-width: 768px) {
         font-size: 2rem;
@@ -49,6 +68,7 @@
 
       @media (max-width: 1024px) {
         justify-content: center;
+        width: 100%;
       }
 
       @media (max-width: 480px) {
@@ -110,15 +130,10 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding: 12px 16px 20px;
+    outline: none;
 
     &::-webkit-scrollbar {
       display: none;
-    }
-
-    &::after {
-      content: '';
-      flex: 0 0 12px;
-      width: 12px;
     }
 
     @media (max-width: 480px) {
@@ -140,6 +155,10 @@
     scroll-snap-align: start;
     transition: all 0.35s ease;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+    &:last-child {
+      margin-right: 16px;
+    }
 
     @media (max-width: 1200px) {
       flex: 0 0 calc(33.333% - 14px);
@@ -237,6 +256,21 @@
         font-size: 0.88rem;
         padding: 6px 12px;
       }
+    }
+  }
+
+  /* Dummy spacer flex item guaranteeing precise trailing horizontal scroll margin on strictly optimized layout engines */
+  .scrollSpacer {
+    flex: 0 0 1px;
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+    pointer-events: none;
+    flex-shrink: 0;
+
+    @media (max-width: 600px) {
+      flex: 0 0 16px;
+      width: 16px;
     }
   }
 
