@@ -70,6 +70,7 @@
 
   .grid {
     display: flex;
+    align-items: stretch;
     gap: 25px;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -105,11 +106,18 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     height: 100%;
+    min-height: 470px;
+    max-height: 470px;
     display: flex;
     flex-direction: column;
 
     &:hover {
       transform: translateY(-10px);
+    }
+
+    @media (max-width: 480px) {
+      min-height: 410px;
+      max-height: 410px;
     }
 
     .imageWrapper {
@@ -176,13 +184,13 @@
         font-size: 1.1rem;
         font-weight: 800;
         color: #111;
-        margin-bottom: 15px;
-        min-height: 44px;
+        margin-bottom: 10px;
+        min-height: 54px;
         line-height: 1.4;
 
         @media (max-width: 480px) {
           font-size: 1rem;
-          min-height: auto;
+          min-height: 48px;
         }
       }
 
@@ -190,7 +198,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
 
         .detailItem {
           display: flex;
@@ -213,7 +221,7 @@
         font-size: 0.8rem;
         color: #2e7d32;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         background: #e8f5e9;
         padding: 6px 12px;
         border-radius: 6px;

@@ -123,14 +123,14 @@
   .card {
     list-style: none;
     background: #fff;
-    border: 1px solid rgba(239, 68, 68, 0.12);
-    border-radius: 18px;
+    border: 1.5px solid #c62828;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
     flex: 0 0 calc(25% - 14px);
-    min-height: 230px;
+    min-height: 180px;
     scroll-snap-align: start;
     transition: all 0.35s ease;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -154,8 +154,8 @@
 
     &:hover {
       transform: translateY(-6px);
-      border-color: rgba(239, 68, 68, 0.35);
-      box-shadow: 0 14px 30px rgba(239, 68, 68, 0.12);
+      border-color: #a91f1f;
+      box-shadow: 0 14px 30px rgba(198, 40, 40, 0.15);
 
       .logoWrapper img {
         transform: scale(1.08);
@@ -189,16 +189,20 @@
     }
 
     .logoWrapper {
-      flex: 1;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px 20px;
-      min-height: 150px;
+      padding: 20px 15px;
+      min-height: 120px;
 
       @media (max-width: 480px) {
-        min-height: 130px;
-        padding: 24px 18px;
+        min-height: 110px;
+        padding: 15px 12px;
+        margin: 6px;
       }
 
       img {
@@ -211,13 +215,12 @@
     }
 
     .label {
-      background: #fafafa;
-      padding: 16px;
+      background: #fff;
+      padding: 12px;
       text-align: center;
       font-size: 0.95rem;
-      font-weight: 800;
-      color: #333;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      font-weight: 700;
+      color: #111;
       transition: all 0.3s ease;
 
       @media (max-width: 480px) {
