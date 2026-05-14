@@ -1,0 +1,112 @@
+.claritySection {
+  padding: 40px 0 80px;
+  background: #111; // Matches the footer background
+
+  .container {
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .blueBar {
+    background: #1a237e; // Dark blue
+    background-image: radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    border-radius: 20px;
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: repeating-linear-gradient(45deg,
+          rgba(255, 255, 255, 0.02) 0px,
+          rgba(255, 255, 255, 0.02) 1px,
+          transparent 1px,
+          transparent 20px);
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+
+    .actions {
+      display: flex;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        .icon {
+          font-size: 1.2rem;
+        }
+      }
+
+      .btnSchedule {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: #fff;
+        }
+      }
+
+      .btnTalk {
+        background: #ef4444;
+        color: #fff;
+        border: none;
+        box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+
+        &:hover {
+          background: #d32f2f;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      padding: 40px;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .actions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .actions {
+        flex-direction: column;
+      }
+    }
+  }
+}

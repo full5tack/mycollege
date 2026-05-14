@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+// Global Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px; // Increased offset to clear both fixed navbars
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden; // Critical to prevent horizontal scrolling
+  width: 100%;
+}
+
+// Fluid Typography
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}

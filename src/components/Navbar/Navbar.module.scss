@@ -1,0 +1,216 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  .container {
+    max-width: 1280px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    position: relative; /* Needed for positioning the mobile menu */
+
+    @media (max-width: 768px) {
+      width: 96%;
+      padding: 10px 12px;
+    }
+  }
+
+  .logo {
+    cursor: pointer;
+    height: 32px;
+
+    @media (max-width: 480px) {
+      height: 26px;
+    }
+
+    .logoImg {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .navLinksWrapper {
+    @media (min-width: 1025px) {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      position: absolute;
+      top: 65px; /* Drop down below the navbar */
+      right: 15px;
+      width: 200px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1001;
+
+      &.mobileActive {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #ef4444;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .btnTalk {
+      background: #ffffff;
+      color: #ef4444;
+      border: 1px solid #ef4444;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #fdf2f2;
+      }
+
+      @media (max-width: 768px) {
+        padding: 8px 12px;
+      }
+
+      @media (max-width: 480px) {
+        padding: 8px;
+        .btnText {
+          display: none;
+        }
+      }
+    }
+
+    .btnSearch {
+      background: #fee2e2;
+      color: #333;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #fca5a5;
+      }
+
+      @media (max-width: 768px) {
+        padding: 8px 12px;
+      }
+
+      @media (max-width: 480px) {
+        padding: 8px;
+        .btnText {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: #333;
+    z-index: 1002;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent; /* No dark overlay needed for small dropdown */
+    z-index: 999;
+    display: none;
+
+    &.overlayVisible {
+      @media (max-width: 1024px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.clikpick {
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .sparkleIcon {
+    color: #ef4444;
+  }
+
+  .aiBadge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background: #4ade80; /* Green color matching image */
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    line-height: 1;
+  }
+}

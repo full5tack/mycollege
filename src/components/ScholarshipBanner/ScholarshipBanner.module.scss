@@ -1,0 +1,240 @@
+.scholarshipSection {
+  padding: 80px 0;
+  background: radial-gradient(circle at top right, #6d0a0a 0%, #1a0101 100%);
+  position: relative;
+  overflow: hidden;
+
+  // Mesh/Grid pattern
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 50px;
+    }
+  }
+
+  .leftSide {
+    h2 {
+      font-size: clamp(1.8rem, 8vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 40px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    .countdown {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      @media (max-width: 1024px) { 
+        justify-content: center; 
+      }
+
+      @media (max-width: 480px) {
+        gap: 8px;
+      }
+
+      .separator {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-top: -30px;
+
+        @media (max-width: 480px) {
+          font-size: 1.2rem;
+          margin-top: -20px;
+        }
+      }
+
+      .timeBox {
+        text-align: center;
+
+        .number {
+          background: #111;
+          color: #fff;
+          font-size: 3rem;
+          font-weight: 800;
+          padding: 15px 20px;
+          border-radius: 16px;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+          min-width: 90px;
+          margin-bottom: 10px;
+
+          @media (max-width: 480px) {
+            font-size: 1.8rem;
+            padding: 10px;
+            min-width: 60px;
+            border-radius: 10px;
+          }
+        }
+
+        span {
+          color: #fff;
+          font-size: 0.8rem;
+          font-weight: 800;
+          opacity: 0.8;
+          letter-spacing: 1px;
+
+          @media (max-width: 480px) {
+            font-size: 0.6rem;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .rightSide {
+    display: flex;
+    justify-content: center;
+
+    .formCard {
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+      @media (max-width: 480px) {
+        padding: 25px 20px;
+        border-radius: 20px;
+      }
+
+      .inputGroup {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid #ddd;
+        border-radius: 100px;
+        padding: 14px 25px;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+
+        &:focus-within {
+          border-color: #d32f2f;
+          box-shadow: 0 0 10px rgba(211, 47, 47, 0.1);
+        }
+
+        .icon { font-size: 1.1rem; color: #888; }
+        
+        input {
+          border: none;
+          outline: none;
+          width: 100%;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #333;
+          &::placeholder { color: #aaa; }
+        }
+
+        .country {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding-right: 12px;
+          border-right: 1px solid #ddd;
+          font-weight: 700;
+          font-size: 0.9rem;
+          color: #333;
+          img { border-radius: 2px; }
+          .downArrow { font-size: 0.6rem; color: #aaa; }
+        }
+      }
+
+      .btnContinue {
+        width: 100%;
+        background: #d32f2f;
+        color: #fff;
+        border: none;
+        padding: 16px;
+        border-radius: 100px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        cursor: pointer;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          background: #b71c1c;
+        }
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        &::before, &::after {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background: #eee;
+        }
+        span {
+          font-size: 0.8rem;
+          color: #888;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+      }
+
+      .btnWhatsapp {
+        width: 100%;
+        background: #25d366;
+        color: #fff;
+        border: none;
+        padding: 16px;
+        border-radius: 100px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          background: #1eb954;
+        }
+
+        .waIcon { font-size: 1.4rem; }
+      }
+    }
+  }
+}

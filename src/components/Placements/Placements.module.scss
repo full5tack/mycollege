@@ -1,0 +1,459 @@
+.placementsSection {
+  padding: 90px 0;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 65px 0;
+  }
+
+  .container {
+    max-width: 1400px;
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .header {
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      backdrop-filter: blur(10px);
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 35px;
+    margin-bottom: 80px;
+    align-items: stretch;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  .highlightsCard {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 30px;
+    padding: 42px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(211, 47, 47, 0.2);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 35px 60px rgba(211, 47, 47, 0.28);
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 22px;
+      border-radius: 24px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      top: -100px;
+      right: -80px;
+    }
+
+    h3 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .statsGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+
+      .statBox {
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(10px);
+        padding: 24px 15px;
+        border-radius: 20px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.35s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        strong {
+          display: block;
+          font-size: clamp(1.5rem, 4vw, 2rem);
+          font-weight: 800;
+          margin-bottom: 8px;
+        }
+
+        span {
+          font-size: 0.82rem;
+          font-weight: 600;
+          opacity: 0.95;
+          line-height: 1.4;
+          display: block;
+        }
+      }
+    }
+
+    .btnGuidance {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 17px 22px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.35s ease;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        background: #000;
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+
+        .arrow {
+          transform: translate(4px, -4px);
+        }
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      .arrow {
+        color: #4ade80;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .rolesList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .roleCard {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 22px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: all 0.35s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      &:hover {
+        border-color: #ef4444;
+        transform: translateY(-4px);
+        box-shadow: 0 20px 35px rgba(239, 68, 68, 0.08);
+
+        .roleIcon {
+          background: linear-gradient(to right, #ef4444, #d32f2f);
+          color: #fff;
+          transform: scale(1.08);
+        }
+      }
+
+      .roleIcon {
+        background: #fff5f5;
+        color: #ef4444;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        transition: all 0.35s ease;
+      }
+
+      .roleInfo {
+        flex: 1;
+
+        h4 {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #111;
+          margin-bottom: 6px;
+          line-height: 1.4;
+        }
+
+        span {
+          font-size: 0.85rem;
+          color: #777;
+          font-weight: 500;
+        }
+      }
+
+      .roleStats {
+        text-align: right;
+
+        @media (max-width: 600px) {
+          text-align: left;
+          width: 100%;
+        }
+
+        .growth {
+          color: #22c55e;
+          font-size: 0.9rem;
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+
+        .salary {
+          color: #111;
+          font-size: 1.05rem;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  .logoSliderWrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 45px 0;
+    position: relative;
+    margin-bottom: 40px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 2;
+
+      @media (max-width: 768px) {
+        width: 50px;
+      }
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, #fff, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, #fff, transparent);
+    }
+
+    .logoTrack {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      width: max-content;
+      animation: slide 30s linear infinite;
+
+      @media (max-width: 768px) {
+        gap: 40px;
+      }
+
+      .logoItem {
+        flex-shrink: 0;
+
+        img {
+          height: 42px;
+          object-fit: contain;
+          transition: all 0.35s ease;
+
+          @media (max-width: 768px) {
+            height: 32px;
+          }
+
+          &:hover {
+            transform: scale(1.12);
+          }
+        }
+      }
+    }
+  }
+
+  .ctaBanner {
+    background: linear-gradient(135deg, #ef4444, #b71c1c);
+    border-radius: 28px;
+    padding: 35px 45px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(239, 68, 68, 0.2);
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 25px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      top: -140px;
+      right: -100px;
+    }
+
+    .aiBadge {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      padding: 18px 24px;
+      border-radius: 18px;
+      text-align: center;
+      min-width: 150px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      z-index: 2;
+
+      .aiIcon {
+        margin-bottom: 8px;
+      }
+
+      span {
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    .ctaText {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+
+      h3 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.96rem;
+        opacity: 0.92;
+        line-height: 1.7;
+        max-width: 700px;
+      }
+    }
+
+    .btnDecide {
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 16px 30px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.35s ease;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        background: #111;
+        color: #fff;
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
